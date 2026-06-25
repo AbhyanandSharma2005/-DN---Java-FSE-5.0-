@@ -1,0 +1,36 @@
+public class CommandTest {
+
+    public static void main(String[] args) {
+
+        Light light = new Light();
+
+
+        Command lightOn =
+                new LightOnCommand(light);
+
+        Command lightOff =
+                new LightOffCommand(light);
+
+
+        RemoteControl remote =
+                new RemoteControl();
+
+
+        remote.setCommand(lightOn);
+
+        System.out.println(
+                "Pressing ON Button:"
+        );
+
+        remote.pressButton();
+
+
+        remote.setCommand(lightOff);
+
+        System.out.println(
+                "\nPressing OFF Button:"
+        );
+
+        remote.pressButton();
+    }
+}
